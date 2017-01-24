@@ -22,6 +22,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("*.html");
+        dispatcher.addMapping("*.pdf");
     }
 
     public AnnotationConfigWebApplicationContext getContext() {
@@ -29,4 +30,6 @@ public class WebAppInitializer implements WebApplicationInitializer {
         context.setConfigLocation("com.pluralsight.WebConfig");
         return context;
     }
+
+
 }
